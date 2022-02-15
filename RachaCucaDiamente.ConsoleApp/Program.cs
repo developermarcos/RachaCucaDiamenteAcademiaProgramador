@@ -9,7 +9,7 @@ namespace RachaCucaDiamente.ConsoleApp
             string imprimir = "";
             int alturaDiamante, quantidadeEspacoParaCaraLado, quantidadeX = 1;
             //Entrada
-            Console.WriteLine("Escreva um valor: ");
+            Console.Write("Escreva um valor: ");
             alturaDiamante = Convert.ToInt32(Console.ReadLine());
             quantidadeEspacoParaCaraLado = (alturaDiamante -1) / 2;
             //Processamento
@@ -40,7 +40,7 @@ namespace RachaCucaDiamente.ConsoleApp
                 }
             }
             //Saída
-            Console.WriteLine("Resultado final\n"+imprimir);
+            Console.Write("Diamante com altura de {0} \n"+imprimir, alturaDiamante.ToString());
             Console.ReadLine();
         }
     }
