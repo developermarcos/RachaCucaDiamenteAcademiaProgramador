@@ -7,26 +7,39 @@ namespace RachaCucaDiamente.ConsoleApp
         static void Main(string[] args)
         {
             string imprimir = "";
-            int alturaDiamante, quantidadeEspacoParaCaraLado, x = 1;
-            
+            int alturaDiamante, quantidadeEspacoParaCaraLado, quantidadeX = 1;
+            //Entrada
             Console.WriteLine("Escreva um valor: ");
             alturaDiamante = Convert.ToInt32(Console.ReadLine());
             quantidadeEspacoParaCaraLado = (alturaDiamante -1) / 2;
-            
-            for (int i = quantidadeEspacoParaCaraLado; i > 0; i--)
+            //Processamento
+            for (int i = alturaDiamante; i > 0; i--)
             {
-                for (int z = 1; z <= quantidadeEspacoParaCaraLado; z++)
+                if (i > (quantidadeEspacoParaCaraLado +1))
                 {
-                    imprimir += " ";
+                    for (int j = i; j > quantidadeEspacoParaCaraLado; j--)
+                        imprimir += " ";
+                    
+                    for (int h = 0; h < quantidadeX; h++)
+                        imprimir += "X";
+                    
+
+                    quantidadeX += 2;
+                    imprimir += "\n";
                 }
-                for (int j = 1; j <= x; j++)
+                else
                 {
-                    imprimir += "X";
+                    for (int z = (quantidadeEspacoParaCaraLado + 1); z >= i; z--)
+                        imprimir += " ";
+                    
+                    for (int h = 0; h < quantidadeX; h++)
+                        imprimir += "X";
+                    
+                    imprimir += "\n";
+                    quantidadeX -= 2;
                 }
-                
-                x += 2;
-                imprimir += "\n";
             }
+            //Saída
             Console.WriteLine("Resultado final\n"+imprimir);
             Console.ReadLine();
         }
